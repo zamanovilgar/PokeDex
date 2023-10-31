@@ -1,0 +1,21 @@
+.container {
+  margin: 20px 0;
+  background-color:rgb(231, 224, 81);
+  border-radius: 6%;
+}
+.list {
+  display: flex;
+  padding: 40px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.title_winner {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+.title_power {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+}

@@ -1,0 +1,27 @@
+.card {
+  border-radius: 20px;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  box-shadow: 0 0 4px 4px;
+}
+.card img {
+  width: 40%;
+  height: 40%;
+  object-fit: cover;
+}
+.card_title {
+  font-size: 18px;
+  color: rgb(82, 15, 8);
+  font-weight: bold;
+  background-color: wheat;
+}
+.card_info {
+  font-size: 18px;
+  background-color: rgb(235, 33, 33);
+}

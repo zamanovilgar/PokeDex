@@ -9,9 +9,11 @@ export const Button = (props) => {
     fullwitdh,
     title = "Button",
     weight = "regular",
+    onClick,
   } = props;
   return (
     <button
+      onClick={onClick}
       className={`${styles[color]} ${styles.btn} ${styles[size]} ${
         fullwitdh ? styles.full : ""
       } ${styles[weight]}`}
