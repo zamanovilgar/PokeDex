@@ -1,30 +1,30 @@
-import pokemonData from "./data/pokemon.json";
+import { useState } from "react";
 import { PokeHead } from "./component/PokeHead";
 import { PokeDexContent } from "./component/PokeDexContent";
+import pokemonData from "./data/pokemon.json";
 // import { Counter } from "./component/Counter";
 // import { Button } from "./component/Button";
-import { useState } from "react";
 function App() {
   const [firstTeam, setFirstTeam] = useState([]);
   const [secondTeam, setSecondTeam] = useState([]);
 
-  console.log(firstTeam);
-  console.log(secondTeam);
+  // console.log(firstTeam);
+  // console.log(secondTeam);
 
   const handleStart = () => {
     let newFirstTeam = [...pokemonData];
     let newSecondTeam = [];
 
     while (newSecondTeam.length < newFirstTeam.length) {
-      const randomIndex = Math.floor(Math.random() * firstTeam.length);
+      const randomIndex = Math.floor(Math.random() * newFirstTeam.length);
 
-      const rmvPokemon = firstTeam.splice(randomIndex, 1);
+      const rmvPokemon = newFirstTeam.splice(randomIndex, 1);
 
       newSecondTeam.push(rmvPokemon[0]);
     }
 
-    console.log(newFirstTeam);
-    console.log(newSecondTeam);
+    // console.log(newFirstTeam);
+    // console.log(newSecondTeam);
 
     setFirstTeam(newFirstTeam);
     setSecondTeam(newSecondTeam);
@@ -32,10 +32,12 @@ function App() {
     console.log("say hello!");
   };
   const team1Power = firstTeam?.reduce(
-    (sum, item) => sum + item?.base_experience,0
+    (sum, item) => sum + item?.base_experience,
+    0
   );
   const team2Power = secondTeam?.reduce(
-    (sum, item) => sum + item?.base_experience,0
+    (sum, item) => sum + item?.base_experience,
+    0
   );
 
   return (
@@ -45,7 +47,7 @@ function App() {
         <>
           {" "}
           <PokeDexContent
-            isWinner={team1Power>team2Power}
+            isWinner={team1Power > team2Power}
             power={team1Power}
             pokemons={firstTeam}
           />
@@ -59,7 +61,7 @@ function App() {
             VS
           </h2>
           <PokeDexContent
-            isWinner={team2Power>team1Power}
+            isWinner={team2Power > team1Power}
             power={team2Power}
             pokemons={secondTeam}
           />

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./PokeHead.module.css";
+
 export const PokeCard = (props) => {
   const pokemonImg = (id) => {
     let newId = id.toString();
